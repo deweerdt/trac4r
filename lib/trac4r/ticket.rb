@@ -44,7 +44,7 @@ module Trac
       method = sym.to_s
       method = method[0..-2] if method =~ /!$/
       if args.size == 0 && instance_variables.include?("@#{method}".to_sym)
-        instance_eval("@" + sym.to_s)
+        instance_eval("@" + method)
       elsif method != sym.to_s
         nil
       else
